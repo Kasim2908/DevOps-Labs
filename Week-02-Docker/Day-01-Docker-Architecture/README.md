@@ -372,6 +372,137 @@ Containers share the host operating system kernel instead of running a full gues
 
 ---
 
+---
+
+# 📚 Additional Resources
+
+## 📖 Official Docker Documentation
+
+- 📘 Docker Get Started Guide  
+  https://docs.docker.com/get-started/
+
+- 📘 What is Docker?  
+  https://docs.docker.com/get-started/docker-overview/
+
+- 📘 Docker Architecture  
+  https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker/
+
+- 📘 Docker Engine Overview  
+  https://docs.docker.com/engine/
+
+- 📘 Docker CLI Reference  
+  https://docs.docker.com/reference/cli/docker/
+
+- 📘 Docker Hub (Official Images)  
+  https://hub.docker.com/
+
+---
+
+## 🎥 Recommended Videos
+
+### Docker for Beginners
+- TechWorld with Nana – Docker Tutorial for Beginners
+  https://www.youtube.com/results?search_query=TechWorld+with+Nana+Docker+Tutorial
+
+### Docker Architecture Explained
+- Docker Architecture Explained
+  https://www.youtube.com/results?search_query=Docker+Architecture+Explained
+
+### Docker Crash Course
+- Docker Full Course
+  https://www.youtube.com/results?search_query=Docker+Full+Course
+
+---
+
+## 📖 Recommended Reading
+
+- Docker Concepts
+  https://docs.docker.com/get-started/docker-concepts/
+
+- Docker Images
+  https://docs.docker.com/get-started/docker-concepts/building-images/
+
+- Docker Containers
+  https://docs.docker.com/get-started/docker-concepts/running-containers/
+
+---
+
+## 📝 Practice Exercises
+
+### Exercise 1
+Install Docker on your system and verify the installation using:
+
+```bash
+docker --version
+docker info
+```
+
+---
+
+### Exercise 2
+Pull the official Ubuntu image and verify it.
+
+```bash
+docker pull ubuntu
+docker images
+```
+
+---
+
+### Exercise 3
+Run an Ubuntu container in interactive mode.
+
+```bash
+docker run -it ubuntu:latest bash
+```
+
+Inside the container:
+
+```bash
+pwd
+whoami
+ls
+```
+
+Exit the container using:
+
+```bash
+exit
+```
+
+---
+
+### Exercise 4
+Run an Nginx container in detached mode.
+
+```bash
+docker run -d nginx
+docker ps
+```
+
+Stop and remove the container.
+
+---
+
+### Exercise 5
+Explore Docker Images and Containers.
+
+```bash
+docker images
+docker ps
+docker ps -a
+docker image inspect ubuntu
+docker history ubuntu
+```
+
+Observe:
+- Image Layers
+- Image Size
+- Creation Time
+- Commands used to build the image
+
+---
+
 # 📂 Project Structure
 
 ```
