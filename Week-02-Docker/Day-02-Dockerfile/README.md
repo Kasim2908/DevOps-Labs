@@ -525,6 +525,105 @@ It avoids running through a shell, provides better signal handling, and is more 
 
 ---
 
+---
+
+# 📚 Additional Resources
+
+## 📖 Official Docker Documentation
+
+- 📘 Dockerfile Overview  
+  https://docs.docker.com/build/concepts/dockerfile/
+
+- 📘 Dockerfile Reference (All Instructions)  
+  https://docs.docker.com/reference/dockerfile/
+
+- 📘 Docker Build Documentation  
+  https://docs.docker.com/build/
+
+- 📘 Docker Build Context  
+  https://docs.docker.com/build/concepts/context/
+
+- 📘 Docker Image Best Practices  
+  https://docs.docker.com/build/building/best-practices/
+
+- 📘 Docker CLI Reference  
+  https://docs.docker.com/reference/cli/docker/
+
+- 📘 docker build Command  
+  https://docs.docker.com/reference/cli/docker/buildx/build/
+
+---
+
+## 🎥 Recommended Videos
+
+### Dockerfile Basics
+- TechWorld with Nana – Docker Tutorial for Beginners
+  https://www.youtube.com/results?search_query=TechWorld+with+Nana+Docker+Tutorial
+
+### Dockerfile Deep Dive
+- Dockerfile Tutorial
+  https://www.youtube.com/results?search_query=Dockerfile+Tutorial
+
+### Docker Image Layers & Caching
+- Docker Layer Caching Explained
+  https://www.youtube.com/results?search_query=Docker+Layer+Caching
+
+---
+
+## 📖 Recommended Reading
+
+- Docker Best Practices for Building Images
+  https://docs.docker.com/build/building/best-practices/
+
+- Understanding Docker Image Layers
+  https://docs.docker.com/get-started/docker-concepts/building-images/understanding-image-layers/
+
+---
+
+## 📝 Practice Exercises
+
+### Exercise 1
+Create a Dockerfile that:
+- Uses `ubuntu:24.04`
+- Installs `git`
+- Sets the working directory to `/project`
+- Starts with `bash`
+
+---
+
+### Exercise 2
+Create a Dockerfile that:
+- Uses `ubuntu:24.04`
+- Sets an environment variable named `APP_NAME`
+- Prints its value after running the container
+
+---
+
+### Exercise 3
+Create a Dockerfile using:
+- `ENTRYPOINT ["echo"]`
+- `CMD ["Docker"]`
+
+Run the container:
+- Without arguments
+- With your name as an argument
+
+Observe how `CMD` is overridden.
+
+---
+
+### Exercise 4
+Modify the Dockerfile by changing only the `ENV` instruction and rebuild the image.
+
+Observe which layers are cached and which layers are rebuilt.
+
+---
+
+### Exercise 5
+Experiment with both Shell Form and Exec Form of `CMD` and compare their behavior.
+
+---
+
 # 📂 Project Structure
 
 ```
