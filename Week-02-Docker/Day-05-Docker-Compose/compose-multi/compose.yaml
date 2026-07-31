@@ -1,1 +1,24 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: nginx-web
 
+    ports:
+      - "8081:80"
+
+    restart: unless-stopped
+
+  database:
+    image: mongo:latest
+    container_name: mongodb
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongodb-data:/data/db
+
+    restart: unless-stopped
+
+volumes:
+  mongodb-data:
