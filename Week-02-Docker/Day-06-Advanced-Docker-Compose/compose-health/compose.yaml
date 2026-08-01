@@ -1,0 +1,23 @@
+services:
+  database:
+    image: mongo:latest
+    container_name: mongodb-health
+
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: nginx:latest
+    container_name: nginx-health
+
+    ports:
+      - "8084:80"
+
+    depends_on:
+      database:
+        condition: service_healthy
+
+    restart: unless-stopped
