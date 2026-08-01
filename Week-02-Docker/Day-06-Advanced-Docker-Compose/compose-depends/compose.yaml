@@ -1,0 +1,18 @@
+services:
+  database:
+    image: mongo:latest
+    container_name: mongodb-depends
+
+    restart: unless-stopped
+
+  app:
+    image: nginx:latest
+    container_name: nginx-depends
+
+    ports:
+      - "8083:80"
+
+    depends_on:
+      - database
+
+    restart: unless-stopped
