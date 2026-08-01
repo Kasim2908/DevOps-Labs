@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: compose-bind-demo
+
+    ports:
+      - "8085:80"
+
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+
+    restart: unless-stopped
