@@ -156,3 +156,70 @@ git add
      ↓
 Committed
 ```
+
+
+Git Branching
+
+git branch
+
+git checkout
+
+git switch
+
+git checkout -b
+
+--------------------------
+
+Git Merge
+
+git merge
+
+git log --graph
+
+--------------------------
+
+Merge Conflict
+
+git status
+
+git add
+
+git commit
+
+--------------------------
+
+Git Stash
+
+git stash
+
+git stash pop
+
+git stash list
+
+git stash apply
+
+--------------------------
+
+Git Tags
+
+git tag
+
+git tag -a
+
+git show
+
+git tag -d
+
+--------------------------
+
+Best Practices
+
+✓ Small commits
+
+✓ Feature branches
+
+✓ Pull before push
+
+✓ Tag releases
+
+✓ Use stash for temporary work
