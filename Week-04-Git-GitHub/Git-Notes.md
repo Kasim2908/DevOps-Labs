@@ -837,3 +837,338 @@ Versioned tags make deployments reproducible and simplify rollbacks.
 
 ✔ Semantic Versioning helps maintain consistent software release versions.
 
+
+# 📘 Git & GitHub Notes – Day 03
+
+## 📅 Topics Covered
+
+- Remote Repository
+- Origin
+- Git Push
+- Git Fetch
+- Git Pull
+- Clone
+- Fork
+- Pull Requests
+- GitHub Flow
+- Hands-on Labs
+
+---
+
+# 1. Remote Repository
+
+A **Remote Repository** is a Git repository hosted on a server like GitHub, GitLab, or Bitbucket. It enables developers to collaborate, share code, and maintain a centralized version history.
+
+### Benefits
+
+- Team collaboration
+- Code backup
+- Version sharing
+- CI/CD integration
+- Open Source Contributions
+
+---
+
+# 2. Local Repository vs Remote Repository
+
+| Local Repository | Remote Repository |
+|------------------|------------------|
+| Stored on your computer | Hosted on GitHub |
+| Used for development | Used for collaboration |
+| Can work offline | Requires internet |
+| Private workspace | Shared workspace |
+
+---
+
+# 3. What is Origin?
+
+`origin` is the default name (alias) of the remote GitHub repository.
+
+Example:
+
+```bash
+git remote add origin https://github.com/username/repository.git
+```
+
+Instead of typing the entire URL every time, Git allows us to use the alias `origin`.
+
+---
+
+# 4. Git Remote
+
+Display configured remotes:
+
+```bash
+git remote -v
+```
+
+Example Output:
+
+```
+origin   https://github.com/user/project.git (fetch)
+origin   https://github.com/user/project.git (push)
+```
+
+---
+
+# 5. Git Push
+
+Push local commits to GitHub.
+
+```bash
+git push origin main
+```
+
+First Push
+
+```bash
+git push -u origin main
+```
+
+The `-u` option sets the upstream branch so future pushes only require:
+
+```bash
+git push
+```
+
+---
+
+# 6. Git Fetch
+
+Downloads the latest commits from GitHub **without merging them** into your current branch.
+
+```bash
+git fetch origin
+```
+
+### Advantages
+
+- Safe operation
+- Review remote changes
+- Doesn't modify working directory
+
+---
+
+# 7. Git Pull
+
+Downloads the latest changes and automatically merges them.
+
+```bash
+git pull origin main
+```
+
+Internally it performs:
+
+```text
+git fetch
+      +
+git merge
+```
+
+---
+
+# Git Fetch vs Git Pull
+
+| Git Fetch | Git Pull |
+|------------|-----------|
+| Downloads changes | Downloads + merges changes |
+| Safe | Can create merge conflicts |
+| Working files unchanged | Working files updated |
+
+---
+
+# 8. Git Clone
+
+Clone creates a complete local copy of a remote repository.
+
+```bash
+git clone https://github.com/user/project.git
+```
+
+Clone copies:
+
+- Project Files
+- Commit History
+- Branches
+- Tags
+- Remote Configuration
+
+---
+
+# 9. Fork
+
+A Fork creates your own copy of another user's GitHub repository.
+
+Example:
+
+```
+Docker Repository
+        │
+      Fork
+        │
+        ▼
+Your GitHub Account
+        │
+      Clone
+        │
+        ▼
+Local Machine
+```
+
+Fork is mainly used in Open Source contributions.
+
+---
+
+# 10. Clone vs Fork
+
+| Clone | Fork |
+|--------|------|
+| Local copy | GitHub copy |
+| Requires repository URL | Creates a personal copy |
+| Used in team projects | Used in open source |
+
+---
+
+# 11. Pull Request (PR)
+
+A Pull Request is a request to merge changes from one branch into another after review.
+
+Benefits
+
+- Code Review
+- Team Collaboration
+- Automated Testing
+- Better Code Quality
+
+---
+
+# Pull Request Workflow
+
+```
+Create Branch
+      │
+      ▼
+Develop Feature
+      │
+      ▼
+Commit Changes
+      │
+      ▼
+Push Branch
+      │
+      ▼
+Open Pull Request
+      │
+      ▼
+Code Review
+      │
+      ▼
+Merge
+      │
+      ▼
+Delete Branch
+```
+
+---
+
+# 12. GitHub Flow
+
+GitHub Flow is a lightweight branching strategy.
+
+Steps:
+
+1. Create a Branch
+2. Make Changes
+3. Commit Changes
+4. Push Branch
+5. Open Pull Request
+6. Review Code
+7. Merge PR
+8. Delete Branch
+
+---
+
+# 13. Real DevOps Workflow
+
+```
+Developer
+      │
+Write Code
+      │
+Commit
+      │
+Push
+      │
+Pull Request
+      │
+Code Review
+      │
+GitHub Actions
+      │
+Deploy
+```
+
+---
+
+# 14. Hands-on Labs Completed
+
+✅ Connected local repository to GitHub
+
+✅ Configured Remote Repository
+
+✅ Used git push
+
+✅ Used git fetch
+
+✅ Used git pull
+
+✅ Practiced clone
+
+✅ Forked an Open Source repository
+
+✅ Created and pushed feature branches
+
+✅ Created Pull Request
+
+✅ Merged Pull Request
+
+✅ Deleted feature branch
+
+---
+
+# 15. Key Learnings
+
+- Remote repositories enable collaboration.
+- `origin` is the default remote alias.
+- `git fetch` downloads changes without merging.
+- `git pull` downloads and merges changes.
+- Fork is commonly used for open-source contributions.
+- Pull Requests help teams review code before merging.
+- GitHub Flow promotes safe and organized development.
+
+---
+
+# Useful Resources
+
+Git Documentation  
+https://git-scm.com/doc
+
+Git Book  
+https://git-scm.com/book/en/v2
+
+GitHub Docs  
+https://docs.github.com/
+
+GitHub Pull Requests  
+https://docs.github.com/en/pull-requests
+
+GitHub Flow Guide  
+https://docs.github.com/en/get-started/using-github/github-flow
+
+Atlassian Git Tutorials  
+https://www.atlassian.com/git/tutorials
+
+Learn Git Branching  
+https://learngitbranching.js.org/
+
+
