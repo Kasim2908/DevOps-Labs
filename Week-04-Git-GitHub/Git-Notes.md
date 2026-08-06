@@ -1148,6 +1148,362 @@ Deploy
 
 ---
 
+# 📘 Git & GitHub Notes – Day 04 (Advanced Git)
+
+## 📅 Topics Covered
+
+- Git Reset
+- Git Revert
+- Git Cherry-pick
+- Git Rebase
+- Git Reflog
+- Detached HEAD
+- Git Best Practices
+
+---
+
+# 1. Git Reset
+
+## What is Git Reset?
+
+`git reset` is used to move the current branch (HEAD) to a previous commit. Depending on the reset mode, it can also modify the staging area and working directory.
+
+Git Reset is mainly used to undo local commits before they are shared with others.
+
+---
+
+## Types of Git Reset
+
+### 1. Soft Reset
+
+```bash
+git reset --soft HEAD~1
+```
+
+Moves the HEAD pointer to the previous commit while keeping all changes staged.
+
+**Use Case**
+
+- Wrong commit message
+- Forgot to add a file
+- Want to combine multiple commits
+
+---
+
+### 2. Mixed Reset (Default)
+
+```bash
+git reset HEAD~1
+```
+
+Moves the HEAD pointer and unstages the changes while keeping the files in the working directory.
+
+**Use Case**
+
+- Want to edit staged files before committing again.
+
+---
+
+### 3. Hard Reset
+
+```bash
+git reset --hard HEAD~1
+```
+
+Moves the HEAD pointer, clears the staging area, and removes all working directory changes.
+
+⚠️ Be careful. Uncommitted changes are permanently lost.
+
+**Use Case**
+
+- Discard unwanted local changes.
+- Restore repository to a previous state.
+
+---
+
+## Soft vs Mixed vs Hard
+
+| Reset Type | Commit | Staging Area | Working Directory |
+|------------|---------|--------------|-------------------|
+| Soft | Removed | Preserved | Preserved |
+| Mixed | Removed | Cleared | Preserved |
+| Hard | Removed | Cleared | Deleted |
+
+---
+
+# 2. Git Revert
+
+## What is Git Revert?
+
+Git Revert creates a new commit that reverses the changes introduced by a previous commit.
+
+Unlike Git Reset, it does not delete commit history.
+
+```bash
+git revert HEAD
+```
+
+### Advantages
+
+- Safe for shared repositories
+- Preserves commit history
+- Ideal for production environments
+
+---
+
+## Reset vs Revert
+
+| Git Reset | Git Revert |
+|------------|------------|
+| Removes commits | Creates reverse commit |
+| Rewrites history | Preserves history |
+| Best for local commits | Best for shared repositories |
+
+---
+
+# 3. Git Cherry-pick
+
+## What is Git Cherry-pick?
+
+Git Cherry-pick copies a specific commit from one branch and applies it to another branch.
+
+```bash
+git cherry-pick <commit-id>
+```
+
+### Use Cases
+
+- Copy a bug fix to another branch.
+- Apply a single feature without merging the whole branch.
+- Reuse selected commits.
+
+---
+
+## Merge vs Cherry-pick
+
+| Merge | Cherry-pick |
+|--------|-------------|
+| Merges all commits | Copies one selected commit |
+| Keeps branch history | Creates a new commit |
+
+---
+
+# 4. Git Rebase
+
+## What is Git Rebase?
+
+Git Rebase moves or reapplies commits on top of another branch to create a clean and linear commit history.
+
+```bash
+git rebase main
+```
+
+---
+
+## Interactive Rebase
+
+```bash
+git rebase -i HEAD~3
+```
+
+Interactive Rebase allows developers to:
+
+- Edit commit messages
+- Squash commits
+- Reorder commits
+- Remove commits
+
+---
+
+## Merge vs Rebase
+
+| Merge | Rebase |
+|--------|---------|
+| Creates Merge Commit | No Merge Commit |
+| Preserves branch history | Rewrites commit history |
+| Easier for collaboration | Cleaner commit history |
+
+---
+
+## Golden Rule
+
+Never rebase commits that have already been pushed to a shared branch unless your team agrees to rewrite history.
+
+---
+
+# 5. Git Reflog
+
+## What is Git Reflog?
+
+Git Reflog records every movement of the HEAD pointer in your local repository.
+
+```bash
+git reflog
+```
+
+It can recover commits that are no longer visible in `git log`.
+
+---
+
+## Recover Lost Commits
+
+```bash
+git reset --hard HEAD@{1}
+```
+
+### Use Cases
+
+- Recover deleted commits
+- Recover after hard reset
+- Recover deleted branches
+- Undo accidental operations
+
+---
+
+# 6. Detached HEAD
+
+## What is Detached HEAD?
+
+Detached HEAD occurs when HEAD points directly to a commit instead of a branch.
+
+Example:
+
+```bash
+git checkout <commit-id>
+```
+
+In this state, new commits are not attached to any branch unless a new branch is created.
+
+---
+
+## Recover Detached HEAD
+
+```bash
+git checkout -b recovery-branch
+```
+
+This saves your work on a new branch.
+
+---
+
+# 7. Git Best Practices
+
+## Write Meaningful Commit Messages
+
+Good Examples
+
+```text
+Add Docker Compose configuration
+
+Fix Kubernetes deployment issue
+
+Implement login authentication
+```
+
+Avoid messages like:
+
+```text
+update
+
+changes
+
+fix
+```
+
+---
+
+## Branch Naming
+
+Recommended naming convention
+
+```text
+feature/login
+
+feature/docker-compose
+
+bugfix/nginx
+
+hotfix/payment
+
+release/v1.0
+```
+
+---
+
+## Pull Request Best Practices
+
+- Keep PRs small and focused.
+- Test changes before opening a PR.
+- Write clear PR descriptions.
+- Request code reviews.
+- Delete merged branches.
+
+---
+
+# 8. Git Workflow Summary
+
+```text
+Working Directory
+        │
+        ▼
+Staging Area
+        │
+        ▼
+Local Repository
+        │
+        ▼
+Remote Repository
+        │
+        ▼
+Pull Request
+        │
+        ▼
+Code Review
+        │
+        ▼
+Merge
+```
+
+---
+
+# 9. Key Learnings
+
+- Git Reset removes commits in different ways depending on the reset mode.
+- Git Revert safely undoes changes by creating a new commit.
+- Git Cherry-pick copies individual commits between branches.
+- Git Rebase creates a cleaner and linear commit history.
+- Git Reflog can recover commits after accidental resets.
+- Detached HEAD allows temporary work on historical commits.
+- Following Git best practices improves collaboration and repository maintenance.
+
+---
+
+# Useful Resources
+
+Git Documentation  
+https://git-scm.com/doc
+
+Git Book  
+https://git-scm.com/book/en/v2
+
+Git Reset Documentation  
+https://git-scm.com/docs/git-reset
+
+Git Revert Documentation  
+https://git-scm.com/docs/git-revert
+
+Git Rebase Documentation  
+https://git-scm.com/docs/git-rebase
+
+Git Reflog Documentation  
+https://git-scm.com/docs/git-reflog
+
+Atlassian Git Tutorials  
+https://www.atlassian.com/git/tutorials
+
+Learn Git Branching  
+https://learngitbranching.js.org/
+
 # Useful Resources
 
 Git Documentation  
