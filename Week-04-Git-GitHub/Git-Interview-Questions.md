@@ -440,6 +440,117 @@ git tag -d v1.0
 
 ---
 
+
+# Advanced Git Interview Questions
+
+## 1. What is git reset?
+
+Git reset moves the current branch to a previous commit. Depending on the mode (soft, mixed, hard), it may also affect the staging area and working directory.
+
+---
+
+## 2. Difference between soft, mixed and hard reset?
+
+### Soft
+
+Removes commit but keeps staged changes.
+
+### Mixed
+
+Removes commit and unstages changes.
+
+### Hard
+
+Removes commit and permanently deletes local changes.
+
+---
+
+## 3. What is git revert?
+
+Git revert creates a new commit that undoes the changes introduced by an earlier commit without deleting history.
+
+---
+
+## 4. Reset vs Revert?
+
+Reset rewrites history.
+
+Revert preserves history by creating a reverse commit.
+
+---
+
+## 5. What is git cherry-pick?
+
+Git cherry-pick copies a specific commit from one branch and applies it to another.
+
+---
+
+## 6. When would you use cherry-pick?
+
+When you need a single bug fix or feature commit without merging the entire branch.
+
+---
+
+## 7. What is git rebase?
+
+Git rebase reapplies commits on top of another branch to create a clean, linear history.
+
+---
+
+## 8. Merge vs Rebase?
+
+Merge creates a merge commit.
+
+Rebase rewrites commit history and avoids merge commits.
+
+---
+
+## 9. Why should you avoid rebasing shared branches?
+
+Because rebasing changes commit hashes, which can disrupt collaborators working on the same history.
+
+---
+
+## 10. What is Interactive Rebase?
+
+Interactive rebase allows you to edit, squash, reorder, or remove commits before sharing them.
+
+---
+
+## 11. What is Git Reflog?
+
+Git reflog records every movement of HEAD and helps recover commits that are no longer visible in the normal commit history.
+
+---
+
+## 12. Can reflog recover a hard reset?
+
+Yes. If the commit still exists in the reflog, it can usually be recovered using `git reset --hard HEAD@{n}`.
+
+---
+
+## 13. What is Detached HEAD?
+
+Detached HEAD is a state where HEAD points directly to a commit instead of a branch.
+
+---
+
+## 14. Why is Detached HEAD useful?
+
+It allows you to inspect or test historical commits without modifying existing branches.
+
+---
+
+## 15. Best practices for Git?
+
+- Write meaningful commit messages.
+- Create feature branches.
+- Keep Pull Requests focused.
+- Pull before pushing.
+- Avoid force-pushing shared branches.
+- Use `.gitignore` appropriately.
+
+
 # 📚 References
 
 - Git Documentation: https://git-scm.com/doc
