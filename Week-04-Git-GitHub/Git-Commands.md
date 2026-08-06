@@ -247,3 +247,112 @@ git diff
 git branch
 git remote -v
 ```
+
+
+# Advanced Git Commands
+
+## Git Reset
+
+### Soft Reset
+
+```bash
+git reset --soft HEAD~1
+```
+
+Moves HEAD back by one commit while keeping all changes staged.
+
+---
+
+### Mixed Reset (Default)
+
+```bash
+git reset HEAD~1
+```
+
+Moves HEAD back and unstages the changes while keeping them in the working directory.
+
+---
+
+### Hard Reset
+
+```bash
+git reset --hard HEAD~1
+```
+
+Moves HEAD back and permanently removes staged and working directory changes.
+
+---
+
+## Git Revert
+
+```bash
+git revert <commit-id>
+```
+
+Creates a new commit that reverses the specified commit.
+
+Example:
+
+```bash
+git revert HEAD
+```
+
+---
+
+## Git Cherry-pick
+
+```bash
+git cherry-pick <commit-id>
+```
+
+Applies a specific commit from another branch to the current branch.
+
+---
+
+## Git Rebase
+
+```bash
+git rebase main
+```
+
+Reapplies the current branch commits on top of another branch.
+
+Interactive Rebase
+
+```bash
+git rebase -i HEAD~3
+```
+
+Used to squash, edit, reorder, or remove commits.
+
+---
+
+## Git Reflog
+
+```bash
+git reflog
+```
+
+Displays the history of HEAD movements.
+
+Recover a commit:
+
+```bash
+git reset --hard HEAD@{1}
+```
+
+---
+
+## Detached HEAD
+
+Checkout a specific commit
+
+```bash
+git checkout <commit-id>
+```
+
+Create a branch from Detached HEAD
+
+```bash
+git checkout -b recovery-branch
+```
