@@ -1,4 +1,4 @@
-# Kubernetes Day 01 Commands
+# Kubernetes Commands
 
 ```bash
 kubectl version --client
