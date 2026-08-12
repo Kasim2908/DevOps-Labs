@@ -1,4 +1,4 @@
-# 🐧 Linux for DevOps
+# DevOps from Zero2Hero
 
 A hands-on collection of Linux fundamentals and Bash scripting exercises completed as part of my DevOps learning journey.
 
