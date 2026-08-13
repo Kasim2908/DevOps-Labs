@@ -1,4 +1,4 @@
-# DevOps from Zero2Hero
+# DevOps from Zero-2-Hero
 
 A hands-on collection of Linux fundamentals and Bash scripting exercises completed as part of my DevOps learning journey.
 
