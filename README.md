@@ -31,7 +31,6 @@ Week-01-Linux-Fundamentals/
 ├── 04-functions
 ├── 05-user-input-and-arguments
 ├── 06-system-automation
-└── screenshots
 ```
 
 ---
