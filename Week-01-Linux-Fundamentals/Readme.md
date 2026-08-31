@@ -37,7 +37,7 @@ By completing this module, I learned how to:
 
 # 📚 Topics Covered
 
-## Linux Basics
+## Linux Basics concepts 
 
 - Introduction to Linux
 - Linux Distributions
